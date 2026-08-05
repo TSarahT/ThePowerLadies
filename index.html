@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Power Ladies — A Community of Women Helping Women</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Baloo+2:wght@800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600;1,9..144,900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #F3EFE3;
+    --cream-deep: #EAE4D2;
+    --black: #0F0E0C;
+    --ink: #1A1917;
+    --yellow: #EFE95C;
+    --yellow-deep: #D9D240;
+    --muted: #6B655A;
+    --line: #1A19171A;
+    --line-cream: #F3EFE320;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .display {
+    font-family: 'Archivo Black', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 0.92;
+    text-transform: uppercase;
+  }
+  .serif {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .eyebrow {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 32px;
+    mix-blend-mode: difference;
+    color: var(--cream);
+  }
+  .nav .brand {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+  }
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+  }
+  .nav a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  .nav a:hover { opacity: 0.6; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    min-height: 100vh;
+    padding: 120px 32px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    background: var(--cream);
+    overflow: hidden;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 20px;
+    padding: 8px 14px;
+    background: var(--yellow);
+    border-radius: 999px;
+  }
+  .hero-eyebrow .pulse {
+    width: 8px; height: 8px;
+    background: var(--ink);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.5; }
+  }
+  .hero-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-topline .dot {
+    display: inline-block;
+    width: 7px; height: 7px;
+    background: var(--ink);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .hero-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(56px, 11vw, 168px);
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    max-width: 1400px;
+  }
+  .hero h1 .italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+  .hero h1 .highlight {
+    background: var(--yellow);
+    padding: 0 0.12em;
+    display: inline-block;
+    transform: rotate(-1.5deg);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .hero-bottom {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr auto;
+    gap: 60px;
+    align-items: end;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  .hero-sub {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.35;
+    font-weight: 400;
+    max-width: 520px;
+  }
+  .hero-sub em { font-style: italic; }
+  .hero-meta {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 18px 28px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(.2,.7,.2,1);
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .btn:hover {
+    background: var(--yellow);
+    color: var(--ink);
+    transform: translateY(-2px);
+  }
+  .btn .arrow {
+    display: inline-block;
+    width: 16px; height: 16px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-left: 4px;
+    transition: transform 0.25s;
+  }
+  .btn:hover .arrow { transform: rotate(45deg) translate(2px, -2px); }
+  .btn.ghost {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid var(--cream);
+  }
+  .btn.ghost:hover {
+    background: var(--yellow);
+    color: var(--ink);
+    border-color: var(--yellow);
+  }
+  .btn.yellow {
+    background: var(--yellow);
+    color: var(--ink);
+  }
+  .btn.yellow:hover {
+    background: var(--ink);
+    color: var(--yellow);
+  }
+
+  /* ---------- Marquee ---------- */
+  .marquee {
+    background: var(--ink);
+    color: var(--yellow);
+    padding: 22px 0;
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+    align-items: center;
+  }
+  .marquee-track span {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 44px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    padding: 0 40px;
+    white-space: nowrap;
+  }
+  .marquee-track .star {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 36px;
+    color: var(--cream);
+    text-transform: none;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ---------- Section frame ---------- */
+  section.frame {
+    padding: 120px 32px;
+    position: relative;
+  }
+  .section-head {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 64px;
+    max-width: 1400px;
+  }
+  .section-head .num {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    padding-top: 16px;
+    border-top: 2px solid var(--ink);
+  }
+  .section-head .title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(38px, 6vw, 88px);
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+  }
+  .section-head .title .italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -0.015em;
+  }
+
+  /* ---------- About ---------- */
+  .about { background: var(--cream); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    max-width: 1400px;
+  }
+  .about-grid .spacer { grid-column: 1; }
+  .about-lead {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(24px, 2.4vw, 36px);
+    line-height: 1.2;
+    font-weight: 400;
+  }
+  .about-lead em { font-style: italic; }
+  .about-lead .pill {
+    background: var(--yellow);
+    font-family: 'Archivo Black', sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    padding: 2px 14px 4px;
+    border-radius: 999px;
+    vertical-align: 0.05em;
+    margin: 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .about-details p {
+    font-size: 17px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+  .about-tags {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag {
+    border: 1px solid var(--ink);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .tag.filled {
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  /* ---------- What You Get / What Makes Us Special ---------- */
+  .benefits {
+    background: var(--cream-deep);
+    border-top: 1px solid var(--ink);
+  }
+  .benefits-list {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    max-width: 1400px;
+  }
+  .benefits-list .spacer { grid-column: 1; }
+  .benefits-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  .benefits-items.three {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .benefit {
+    padding: 40px 32px 40px 0;
+    border-top: 1px solid var(--ink);
+    position: relative;
+  }
+  .benefit:nth-child(odd) { padding-right: 48px; }
+  .benefit:nth-child(even) { padding-left: 48px; border-left: 1px solid var(--ink); }
+  .benefit:nth-last-child(-n+2) { border-bottom: 1px solid var(--ink); }
+  .benefits-items.three .benefit {
+    padding: 44px 28px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    border-left: none;
+  }
+  .benefits-items.three .benefit:nth-child(odd),
+  .benefits-items.three .benefit:nth-child(even) {
+    padding: 44px 28px;
+  }
+  .benefits-items.three .benefit + .benefit {
+    border-left: 1px solid var(--ink);
+  }
+  .benefits-items.three .benefit:first-child {
+    padding-left: 0;
+  }
+  .benefits-items.three .benefit:last-child {
+    padding-right: 0;
+  }
+  .benefit .b-num {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 13px;
+    display: inline-block;
+    background: var(--yellow);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+    letter-spacing: 0.06em;
+  }
+  .benefit h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(22px, 2vw, 30px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .benefit h3 .italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+  }
+  .benefit p {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 440px;
+  }
+
+  /* ---------- Sponsor Strip ---------- */
+  .sponsors {
+    background: var(--cream);
+    padding: 60px 32px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .sponsors-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .sponsors-label {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    padding-right: 40px;
+    border-right: 1px solid var(--line);
+  }
+  .sponsors-label .serif {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    font-size: 16px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .sponsors-logos {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .logo-rize {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 34px;
+    letter-spacing: -0.04em;
+    color: #3D1F5C;
+    text-transform: lowercase;
+  }
+  .logo-rize::before {
+    content: "";
+    display: inline-block;
+    width: 22px; height: 22px;
+    background: linear-gradient(135deg, #FF6A00 0%, #FF6A00 50%, #FFC24A 50%, #FFC24A 100%);
+    border-radius: 4px;
+    transform: rotate(-8deg);
+    margin-right: 4px;
+  }
+  .logo-rize .tag {
+    display: block;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #3D1F5C;
+    margin-top: -8px;
+    padding-left: 30px;
+  }
+  .logo-rize-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo-bc-svg {
+    width: 160px;
+    height: auto;
+    display: block;
+  }
+  .sponsors-note {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: right;
+    max-width: 200px;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  /* ---------- What to Expect (Run of Show) ---------- */
+  .expect {
+    background: var(--cream);
+    padding: 120px 32px;
+    border-top: 1px solid var(--ink);
+  }
+  .expect-wrap {
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+  }
+  .expect-wrap .spacer { grid-column: 1; }
+  .expect-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 2px solid var(--ink);
+    position: relative;
+  }
+  .expect-step {
+    padding: 36px 24px 40px 0;
+    position: relative;
+    border-right: 1px dashed var(--line);
+  }
+  .expect-step:last-child { border-right: none; }
+  .expect-step:nth-child(n+2) { padding-left: 24px; }
+  .expect-step::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -1px;
+    width: 14px;
+    height: 14px;
+    background: var(--yellow);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+  }
+  .expect-step:nth-child(n+2)::before {
+    left: 23px;
+  }
+  .expect-step .time {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(24px, 2.4vw, 34px);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .expect-step .time .ampm {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.6em;
+    color: var(--muted);
+    letter-spacing: 0;
+  }
+  .expect-step .step-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: inline-block;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .expect-step p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .expect-step p em {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+  }
+  .expect-programs {
+    margin-top: 40px;
+    padding: 32px;
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .expect-programs h4 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .expect-programs h4 .italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    color: var(--yellow);
+  }
+  .expect-programs .prog-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .expect-programs .prog-list span {
+    background: transparent;
+    border: 1px solid var(--cream);
+    color: var(--cream);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+
+  /* ---------- Membership (NEW) ---------- */
+  .membership {
+    background: var(--yellow);
+    padding: 100px 32px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .m-wrap {
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: 60px 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .m-wrap .spacer { grid-column: 1; }
+  .m-eyebrow {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--yellow);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .m-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 4.6vw, 66px);
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .m-title .italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+  }
+  .m-copy {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(18px, 1.5vw, 22px);
+    line-height: 1.4;
+    max-width: 520px;
+    margin-bottom: 8px;
+  }
+  .m-copy em { font-style: italic; }
+  .m-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .m-email {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(22px, 2.2vw, 32px);
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 20px 24px;
+    background: var(--ink);
+    color: var(--yellow);
+    border-radius: 12px;
+    transition: transform 0.25s cubic-bezier(.2,.7,.2,1);
+    display: inline-block;
+    text-transform: lowercase;
+  }
+  .m-email:hover {
+    transform: translateY(-3px) rotate(-1deg);
+  }
+  .m-note {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.75;
+    font-weight: 500;
+  }
+
+  /* ---------- Chapters ---------- */
+  .chapters {
+    background: var(--ink);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .chapters .section-head .num { border-color: var(--cream); }
+  .chapters .section-head .title { color: var(--cream); }
+  .chapters-grid {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr;
+    gap: 60px;
+    max-width: 1400px;
+  }
+  .chapters-grid .spacer { grid-column: 1; }
+  .chapters-copy p {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(20px, 1.8vw, 26px);
+    line-height: 1.35;
+    margin-bottom: 28px;
+    color: var(--cream);
+    max-width: 520px;
+  }
+  .chapters-copy .small {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--cream);
+    opacity: 0.75;
+    font-style: normal;
+    max-width: 520px;
+  }
+  .chapter-list {
+    list-style: none;
+    border-top: 1px solid var(--line-cream);
+  }
+  .chapter-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line-cream);
+    transition: padding 0.3s;
+  }
+  .chapter-list li:hover { padding-left: 12px; }
+  .chapter-list .city {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(20px, 2vw, 28px);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+  .chapter-list .status {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+  .chapter-list .status.new {
+    color: var(--yellow);
+    opacity: 1;
+    font-weight: 600;
+  }
+  .chapter-list .status.fall {
+    color: var(--cream);
+    opacity: 0.85;
+  }
+  .chapter-group-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    padding: 20px 0 8px;
+    font-weight: 600;
+    display: block;
+    border-top: 1px solid var(--line-cream);
+    margin-top: 8px;
+  }
+  .chapter-group-label:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .chapters-cta {
+    margin-top: 48px;
+  }
+
+  /* ---------- Gallery ---------- */
+  .gallery {
+    background: var(--cream);
+    padding: 120px 32px;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .g-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--cream-deep);
+    border-radius: 4px;
+  }
+  .g-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(.2,.7,.2,1);
+  }
+  .g-item:hover img { transform: scale(1.05); }
+  .g-item .caption {
+    position: absolute;
+    left: 16px; bottom: 16px;
+    background: var(--cream);
+    padding: 6px 12px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .g-1 { grid-column: span 5; grid-row: span 2; aspect-ratio: 4/5; }
+  .g-2 { grid-column: span 4; aspect-ratio: 1; }
+  .g-3 { grid-column: span 3; aspect-ratio: 3/4; }
+  .g-4 { grid-column: span 4; aspect-ratio: 4/3; }
+  .g-5 { grid-column: span 3; aspect-ratio: 1; }
+  .g-6 { grid-column: span 7; aspect-ratio: 16/9; }
+  .g-7 { grid-column: span 5; aspect-ratio: 5/4; }
+  .g-quote {
+    background: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    text-align: center;
+  }
+  .g-quote .q-text {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: clamp(22px, 2vw, 30px);
+    line-height: 1.2;
+    font-weight: 400;
+  }
+  .g-quote .q-text strong {
+    font-family: 'Archivo Black', sans-serif;
+    font-style: normal;
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    margin-top: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ---------- App Access ---------- */
+  .app-access {
+    background: var(--cream-deep);
+    padding: 120px 32px;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--ink);
+  }
+  .app-wrap {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr;
+    gap: 60px;
+    max-width: 1400px;
+    align-items: center;
+  }
+  .app-wrap .spacer { grid-column: 1; }
+  .app-text .eyebrow {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--yellow);
+    padding: 8px 14px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+  }
+  .app-text h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .app-text h2 .italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+  }
+  .app-text p {
+    font-size: 17px;
+    line-height: 1.55;
+    max-width: 480px;
+    margin-bottom: 16px;
+  }
+  .app-text .muted {
+    font-style: italic;
+    font-family: 'Fraunces', serif;
+    color: var(--ink);
+    opacity: 0.75;
+  }
+  .app-text .power-line {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(18px, 1.5vw, 22px);
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    background: var(--yellow);
+    display: inline-block;
+    padding: 8px 14px;
+    margin-top: 16px;
+    transform: rotate(-1deg);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .app-visual {
+    position: relative;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .phone {
+    width: 260px;
+    height: 520px;
+    background: var(--ink);
+    border-radius: 40px;
+    padding: 14px;
+    position: relative;
+    box-shadow: 20px 20px 0 var(--ink);
+    transform: rotate(-6deg);
+  }
+  .phone .screen {
+    width: 100%;
+    height: 100%;
+    background: var(--cream);
+    border-radius: 28px;
+    overflow: hidden;
+    padding: 22px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .phone .notch {
+    position: absolute;
+    top: 14px; left: 50%;
+    transform: translateX(-50%);
+    width: 80px; height: 22px;
+    background: var(--ink);
+    border-radius: 0 0 12px 12px;
+    z-index: 2;
+  }
+  .phone .p-brand {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    margin-top: 14px;
+  }
+  .phone .p-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20px;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .phone .p-card {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 12px;
+    border-radius: 14px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .phone .p-card .tag {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--ink);
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    border: none;
+    font-weight: 700;
+  }
+  .phone .p-card .p-h {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .phone .p-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 11px;
+    padding: 8px;
+    background: var(--cream-deep);
+    border-radius: 10px;
+  }
+  .phone .avatar {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--yellow);
+    flex-shrink: 0;
+  }
+
+  /* ---------- FAQs ---------- */
+  .faqs {
+    background: var(--cream);
+    padding: 120px 32px;
+    border-top: 1px solid var(--ink);
+  }
+  .faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .faq { border-bottom: 1px solid var(--ink); }
+  .faq:first-child { border-top: 1px solid var(--ink); }
+  .faq summary {
+    list-style: none;
+    padding: 28px 0;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(20px, 2vw, 28px);
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: padding-left 0.3s;
+  }
+  .faq[open] summary { padding-left: 12px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s, background 0.3s;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 18px;
+  }
+  .faq[open] summary .icon {
+    transform: rotate(45deg);
+    background: var(--yellow);
+    color: var(--ink);
+  }
+  .faq-body {
+    padding: 0 0 32px;
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    line-height: 1.45;
+    font-weight: 400;
+    max-width: 700px;
+  }
+  .faq-body em { font-style: italic; }
+  .faq-body a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--yellow-deep);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  .faq-cities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 22px 0 20px;
+  }
+  .faq-cities .fc {
+    font-family: 'Instrument Sans', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    border: 1px solid var(--ink);
+    padding: 6px 13px;
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: transparent;
+    transition: background 0.2s, color 0.2s;
+  }
+  .faq-cities .fc:hover {
+    background: var(--yellow);
+  }
+
+  /* ---------- Contact ---------- */
+  .contact {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 120px 32px;
+  }
+  .contact .section-head .num { border-color: var(--cream); }
+  .contact .section-head .title { color: var(--cream); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 60px 1fr 1.2fr;
+    gap: 60px;
+    max-width: 1400px;
+  }
+  .contact-grid .spacer { grid-column: 1; }
+  .contact-intro p {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(22px, 2vw, 30px);
+    line-height: 1.25;
+    font-weight: 400;
+    margin-bottom: 32px;
+    max-width: 440px;
+  }
+  .contact-reasons {
+    list-style: none;
+    padding: 0;
+  }
+  .contact-reasons li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line-cream);
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .contact-reasons li .dot {
+    width: 6px; height: 6px;
+    background: var(--yellow);
+    border-radius: 50%;
+  }
+  .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .form .full { grid-column: span 2; }
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .field label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.7;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--cream);
+    padding: 12px 0;
+    color: var(--cream);
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 17px;
+    outline: none;
+    border-radius: 0;
+    transition: border-color 0.2s;
+  }
+  .field select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23F3EFE3' d='M6 8L0 0h12z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    cursor: pointer;
+  }
+  .field select option { background: var(--ink); color: var(--cream); }
+  .field textarea { resize: vertical; min-height: 100px; }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus { border-color: var(--yellow); }
+  .form-submit {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .form-submit .fine {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    max-width: 300px;
+    line-height: 1.5;
+  }
+  .form-success {
+    display: none;
+    padding: 40px;
+    background: var(--yellow);
+    color: var(--ink);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .form-success.show { display: block; }
+  .form-success h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .form-success p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 20px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 60px 32px 40px;
+    border-top: 1px solid var(--line-cream);
+  }
+  .footer-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: end;
+  }
+  footer .f-brand {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(60px, 9vw, 140px);
+    letter-spacing: -0.03em;
+    line-height: 0.82;
+    text-transform: uppercase;
+    color: var(--yellow);
+  }
+  footer .f-meta {
+    text-align: right;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    line-height: 1.7;
+  }
+  footer .f-meta a {
+    color: var(--yellow);
+    text-decoration: none;
+    opacity: 1;
+  }
+
+  /* ---------- Reveal ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(.2,.7,.2,1), transform 0.8s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .hero .stagger { opacity: 0; transform: translateY(20px); animation: rise 0.9s cubic-bezier(.2,.7,.2,1) forwards; }
+  .hero .stagger:nth-child(1) { animation-delay: 0.05s; }
+  .hero .stagger:nth-child(2) { animation-delay: 0.2s; }
+  .hero .stagger:nth-child(3) { animation-delay: 0.5s; }
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    section.frame { padding: 80px 20px; }
+    .hero { padding: 100px 20px 40px; }
+    .hero-topline { font-size: 10px; flex-wrap: wrap; gap: 8px; }
+    .hero-bottom { grid-template-columns: 1fr; gap: 24px; }
+    .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 40px; }
+    .section-head .num { border-top: none; padding-top: 0; }
+    .about-grid,
+    .benefits-list,
+    .chapters-grid,
+    .app-wrap,
+    .contact-grid,
+    .m-wrap {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .about-grid .spacer,
+    .benefits-list .spacer,
+    .chapters-grid .spacer,
+    .app-wrap .spacer,
+    .contact-grid .spacer,
+    .m-wrap .spacer { display: none; }
+    .benefits-items { grid-template-columns: 1fr; }
+    .benefits-items.three { grid-template-columns: 1fr; }
+    .benefits-items.three .benefit + .benefit { border-left: none; }
+    .benefits-items.three .benefit { padding: 32px 0 !important; border-bottom: none !important; }
+    .benefits-items.three .benefit:last-child { border-bottom: 1px solid var(--ink) !important; }
+    .benefit:nth-child(even) { padding-left: 0; border-left: none; }
+    .benefit:nth-child(odd) { padding-right: 0; }
+    .benefit { border-bottom: none !important; }
+    .benefit:last-child { border-bottom: 1px solid var(--ink) !important; }
+    .expect-wrap { grid-template-columns: 1fr; }
+    .expect-wrap .spacer { display: none; }
+    .expect-timeline { grid-template-columns: 1fr; border-top: 2px solid var(--ink); }
+    .expect-step { border-right: none; border-bottom: 1px dashed var(--line); padding: 32px 0 32px 24px !important; }
+    .expect-step::before, .expect-step:nth-child(n+2)::before { left: -6px; }
+    .expect-step:last-child { border-bottom: none; }
+    .expect-programs { grid-template-columns: 1fr; gap: 20px; }
+    .sponsors-wrap { grid-template-columns: 1fr; gap: 24px; text-align: center; }
+    .sponsors-label { border-right: none; border-bottom: 1px solid var(--line); padding-right: 0; padding-bottom: 20px; }
+    .sponsors-logos { gap: 40px; }
+    .sponsors-note { text-align: center; max-width: 100%; }
+    .hero-eyebrow { font-size: 11px; }
+    .form { grid-template-columns: 1fr; }
+    .form .full, .form-submit { grid-column: span 1; }
+    .footer-wrap { grid-template-columns: 1fr; }
+    footer .f-meta { text-align: left; }
+    .gallery-grid { grid-template-columns: repeat(6, 1fr); }
+    .g-1, .g-2, .g-3, .g-4, .g-5, .g-6, .g-7 { grid-column: span 6; aspect-ratio: 4/3; }
+    .nav { padding: 16px 20px; }
+    .nav ul { gap: 18px; }
+    .marquee-track span { font-size: 28px; padding: 0 24px; }
+    .marquee-track .star { font-size: 24px; }
+    .phone { transform: rotate(-4deg) scale(0.85); }
+    .membership { padding: 70px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="brand">POWER LADIES</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#membership">Membership</a></li>
+    <li><a href="#chapters">Chapters</a></li>
+    <li><a href="#faqs">FAQ</a></li>
+    <li><a href="#contact">Join</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-topline stagger">
+    <span><span class="dot"></span>Est. 2023 — Referral Based</span>
+    <span>1,200+ Women · LA to London</span>
+  </div>
+
+  <div class="hero-main">
+    <div class="stagger">
+      <div class="hero-eyebrow"><span class="pulse"></span>Welcome to the Village</div>
+      <h1>
+        Women<br />
+        helping<br />
+        <span class="italic">women.</span> <span class="highlight">Everywhere.</span>
+      </h1>
+    </div>
+  </div>
+
+  <div class="hero-bottom stagger">
+    <p class="hero-sub">
+      A global community of <em>founders, executives, creatives, and first-timers</em> — connected by one simple question: <em>How can I help you?</em>
+    </p>
+    <div class="hero-meta">
+      Come as you are.<br />
+      A community that <em style="font-family: 'Fraunces', serif; font-style: italic; font-weight: 600;">picks up.</em><br />
+      Rise together.
+    </div>
+    <a href="#contact" class="btn">Join the Community <span class="arrow"></span></a>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>How can I help you?</span><span class="star">✦</span>
+    <span>Los Angeles</span><span class="star">✦</span>
+    <span>San Diego</span><span class="star">✦</span>
+    <span>Phoenix</span><span class="star">✦</span>
+    <span>New York</span><span class="star">✦</span>
+    <span>Montreal</span><span class="star">✦</span>
+    <span>London</span><span class="star">✦</span>
+    <span>Lisbon</span><span class="star">✦</span>
+    <span>Zurich</span><span class="star">✦</span>
+    <span>How can I help you?</span><span class="star">✦</span>
+    <span>Los Angeles</span><span class="star">✦</span>
+    <span>San Diego</span><span class="star">✦</span>
+    <span>Phoenix</span><span class="star">✦</span>
+    <span>New York</span><span class="star">✦</span>
+    <span>Montreal</span><span class="star">✦</span>
+    <span>London</span><span class="star">✦</span>
+    <span>Lisbon</span><span class="star">✦</span>
+    <span>Zurich</span><span class="star">✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="frame about reveal">
+  <div class="section-head">
+    <div class="num">01 / About</div>
+    <h2 class="title">Not a networking group. <span class="italic">A community.</span></h2>
+  </div>
+  <div class="about-grid">
+    <div class="spacer"></div>
+    <div>
+      <p class="about-lead">
+        Power Ladies is for women who come <em>as they are</em> — and come ready to help. No résumé, no title, no stage of life required. Just <span class="pill">generosity</span>, curiosity, and the belief that <em>we rise together</em>.
+      </p>
+    </div>
+    <div class="about-details">
+      <p>We're a referral-based in-person and online community — because the strength of the room depends on the character of the women in it. You're invited in by a member who's already lived it, or through a warm conversation with your local chapter lead.</p>
+      <p>From CEOs to film producers, small business owners to first-time job seekers, our village is built on one truth: <em>women helping women is the most powerful community there is.</em></p>
+      <p>Alongside our complimentary events, we offer programs through our main sponsors, <strong>Rize Credit Union</strong> and <strong>Barely Canadian</strong> — two partners who believe in this community as deeply as we do.</p>
+      <div class="about-tags">
+        <span class="tag filled">Founders</span>
+        <span class="tag">Executives</span>
+        <span class="tag">Creatives</span>
+        <span class="tag filled">Makers</span>
+        <span class="tag">Builders</span>
+        <span class="tag">Returners</span>
+        <span class="tag filled">Dreamers</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPONSOR STRIP -->
+<section class="sponsors reveal">
+  <div class="sponsors-wrap">
+    <div class="sponsors-label">
+      Founding Partners
+      <span class="serif">Powering the village.</span>
+    </div>
+    <div class="sponsors-logos">
+      <div class="logo-rize-wrap">
+        <span class="logo-rize">rize</span>
+        <span class="logo-rize"><span class="tag">Beyond Banking</span></span>
+      </div>
+      <svg class="logo-bc-svg" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" aria-label="Barely Canadian">
+        <!-- Left cloud -->
+        <g fill="#BDBDBD">
+          <ellipse cx="45" cy="82" rx="24" ry="14"/>
+          <ellipse cx="62" cy="72" rx="17" ry="12"/>
+          <ellipse cx="28" cy="76" rx="14" ry="10"/>
+        </g>
+        <!-- Rainbow arcs -->
+        <g fill="none" stroke-width="11">
+          <path d="M 50 84 A 110 110 0 0 1 270 84" stroke="#E63946"/>
+          <path d="M 61 84 A 99 99 0 0 1 259 84" stroke="#F77F00"/>
+          <path d="M 72 84 A 88 88 0 0 1 248 84" stroke="#FCBF49"/>
+          <path d="M 83 84 A 77 77 0 0 1 237 84" stroke="#06D6A0"/>
+          <path d="M 94 84 A 66 66 0 0 1 226 84" stroke="#118AB2"/>
+        </g>
+        <!-- Right cloud -->
+        <g fill="#BDBDBD">
+          <ellipse cx="275" cy="82" rx="24" ry="14"/>
+          <ellipse cx="258" cy="72" rx="17" ry="12"/>
+          <ellipse cx="292" cy="76" rx="14" ry="10"/>
+        </g>
+        <!-- Text: barely canadian -->
+        <g font-family="'Baloo 2', 'Nunito', system-ui, sans-serif" font-weight="800" font-size="42" text-anchor="middle">
+          <text x="160" y="150" letter-spacing="-1">
+            <tspan fill="#E63999">b</tspan><tspan fill="#F77F00">a</tspan><tspan fill="#E63946">r</tspan><tspan fill="#4CC9F0">e</tspan><tspan fill="#3A86FF">l</tspan><tspan fill="#FFD60A">y</tspan>
+          </text>
+          <text x="160" y="196" letter-spacing="-1">
+            <tspan fill="#4CC9F0">c</tspan><tspan fill="#B5179E">a</tspan><tspan fill="#3A86FF">n</tspan><tspan fill="#06D6A0">a</tspan><tspan fill="#F77F00">d</tspan><tspan fill="#FFD60A">i</tspan><tspan fill="#E63946">a</tspan><tspan fill="#E63999">n</tspan>
+          </text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT MAKES US SPECIAL -->
+<section class="frame benefits reveal">
+  <div class="section-head">
+    <div class="num">02 / What Makes Us Special</div>
+    <h2 class="title">The <span class="italic">power</span> of the room.</h2>
+  </div>
+  <div class="benefits-list">
+    <div class="spacer"></div>
+    <div class="benefits-items three">
+      <div class="benefit">
+        <span class="b-num">01</span>
+        <h3>Authentic <span class="italic">Connection</span></h3>
+        <p>No one stands alone. Everyone is welcoming, kind, and embracive. New members notice it immediately — it's the nature of our village. Our community is built on genuine, personal connections, first and foremost.</p>
+      </div>
+      <div class="benefit">
+        <span class="b-num">02</span>
+        <h3>Give &amp; <span class="italic">Receive</span></h3>
+        <p>We create a cycle of positivity that benefits both the giver and the recipient. Women naturally possess a remarkable ability to support one another — when we do, powerful connections are formed.</p>
+      </div>
+      <div class="benefit">
+        <span class="b-num">03</span>
+        <h3>The Power of <span class="italic">the Room</span></h3>
+        <p>Reaching an elusive big buyer, finding the perfect tennis coach, helping a child gain school admission, or helping a member find love — we do what we can to connect the dots and make things happen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT (Run of Show) -->
+<section class="expect reveal">
+  <div class="section-head">
+    <div class="num">03 / What to Expect</div>
+    <h2 class="title">A night in <span class="italic">the village.</span></h2>
+  </div>
+  <div class="expect-wrap">
+    <div class="spacer"></div>
+    <div>
+      <div class="expect-timeline">
+        <div class="expect-step">
+          <div class="time">5:00<span class="ampm"> pm</span></div>
+          <div class="step-title">Check In &amp; Connect</div>
+          <p>Pick up your name tag and meet some Power Ladies. Within a few minutes, you'll be in conversation — <em>that's the welcoming nature of our village.</em></p>
+        </div>
+        <div class="expect-step">
+          <div class="time">6:30<span class="ampm"> pm</span></div>
+          <div class="step-title">Announcements &amp; Program</div>
+          <p><em>Active Helping:</em> present something you need help with and the room works with you to find it. <em>Shout Outs:</em> celebrate the members going above and beyond.</p>
+        </div>
+        <div class="expect-step">
+          <div class="time">6:45<span class="ampm"> pm</span></div>
+          <div class="step-title">Mix &amp; Mingle</div>
+          <p>Connect with the intention of helping one another. Approach with curiosity. <em>Be an Active Helper.</em></p>
+        </div>
+        <div class="expect-step">
+          <div class="time">8:00<span class="ampm"> pm</span></div>
+          <div class="step-title">End of Event</div>
+          <p>The night wraps, but the village keeps going — <em>the calendar and conversations live on the app.</em></p>
+        </div>
+      </div>
+
+      <div class="expect-programs">
+        <h4>Between events, the <span class="italic">village never sleeps.</span></h4>
+        <div class="prog-list">
+          <span>Accountability Pods</span>
+          <span>Sound Baths</span>
+          <span>Hypnotherapy</span>
+          <span>Entrepreneur Pods</span>
+          <span>Book Club</span>
+          <span>Pilates</span>
+          <span>Goal-Setting Pods</span>
+          <span>Executive Coaching</span>
+          <span>+ more</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section id="membership" class="membership reveal">
+  <div class="m-wrap">
+    <div class="spacer"></div>
+    <div>
+      <span class="m-eyebrow">04 / Membership</span>
+      <h2 class="m-title">Come inside. <span class="italic">Let's talk.</span></h2>
+      <p class="m-copy">
+        Power Ladies memberships are now open in Los Angeles, with more chapter cities joining soon. Every path in begins the same way — <em>a conversation.</em>
+      </p>
+      <p class="m-copy">
+        Reach out and we'll walk you through membership options, guest passes, and what makes the most sense for you and your city.
+      </p>
+      <p class="m-copy" style="font-size: 15px; padding: 14px 18px; background: var(--ink); color: var(--yellow); border-radius: 10px; display: inline-block; margin-top: 8px; font-family: 'Instrument Sans', sans-serif; font-style: normal; letter-spacing: 0.02em;">
+        ✦ <em style="font-family: 'Fraunces', serif;">Rize Credit Union members</em> — ask us about your exclusive Power Ladies benefit.
+      </p>
+    </div>
+    <div class="m-cta">
+      <span class="m-note">For membership inquiries</span>
+      <a href="mailto:info@thepowerladies.com" class="m-email">info@thepowerladies.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<section id="chapters" class="frame chapters reveal">
+  <div class="section-head">
+    <div class="num">05 / Chapters</div>
+    <h2 class="title">Local rooms, <span class="italic">global reach.</span></h2>
+  </div>
+  <div class="chapters-grid">
+    <div class="spacer"></div>
+    <div class="chapters-copy">
+      <p>A chapter is a local Power Ladies room — hosted by a member who opens the door, sets the table, and leads the question that kicks everything off: <em>How can I help you?</em></p>
+      <p class="small">Each chapter meets monthly. Chapter leaders work with venues, home hosts, and local sponsors to build a gathering that feels like an invitation, not a mixer. We've grown from a garage in Venice to more than two dozen chapters existing or opening soon across North America and Europe. Don't see your city? That's an opportunity.</p>
+      <div class="chapters-cta">
+        <a href="#contact" class="btn yellow">Start a Chapter <span class="arrow"></span></a>
+      </div>
+    </div>
+    <ul class="chapter-list">
+      <span class="chapter-group-label">Los Angeles — Existing</span>
+      <li><span class="city">Downtown LA</span><span class="status">Existing</span></li>
+      <li><span class="city">Westside</span><span class="status">Existing</span></li>
+      <li><span class="city">South Bay</span><span class="status">Existing</span></li>
+      <li><span class="city">The Valley</span><span class="status">Existing</span></li>
+      <span class="chapter-group-label">Los Angeles — Opening Soon</span>
+      <li><span class="city">Malibu</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">Pasadena</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">Hollywood</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">Beverly Hills</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">Long Beach</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">Laguna Niguel</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">Westlake Village</span><span class="status fall">Opening Soon</span></li>
+      <span class="chapter-group-label">Global — Existing</span>
+      <li><span class="city">San Diego</span><span class="status">Existing</span></li>
+      <li><span class="city">Phoenix / Scottsdale</span><span class="status">Existing</span></li>
+      <li><span class="city">Sacramento</span><span class="status">Existing</span></li>
+      <li><span class="city">NYC — Lower East Side</span><span class="status">Existing</span></li>
+      <li><span class="city">Montreal</span><span class="status">Existing</span></li>
+      <li><span class="city">London</span><span class="status">Existing</span></li>
+      <li><span class="city">Lisbon</span><span class="status">Existing</span></li>
+      <span class="chapter-group-label">Global — Opening Soon</span>
+      <li><span class="city">Toronto</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">Tucson</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">Washington, DC</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">Temecula</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">San Francisco</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">Seattle</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">Mexico City</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">Zurich</span><span class="status fall">Opening Soon</span></li>
+      <li><span class="city">Your City</span><span class="status new">Open — Apply</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery reveal">
+  <div class="section-head" style="max-width: 1500px; margin: 0 auto 48px;">
+    <div class="num">06 / Moments</div>
+    <h2 class="title">What it <span class="italic">feels</span> like.</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="g-item g-1">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" alt="Women gathered at an event" />
+      <span class="caption">Downtown LA · City Club</span>
+    </div>
+    <div class="g-item g-2">
+      <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?w=800&q=80" alt="Women in conversation" />
+      <span class="caption">Active Helping</span>
+    </div>
+    <div class="g-item g-3 g-quote">
+      <div class="q-text">
+        "How can I help you?"
+        <strong>— Our favorite question</strong>
+      </div>
+    </div>
+    <div class="g-item g-4">
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80" alt="Founders gathering" />
+      <span class="caption">Montreal · Chapter Night</span>
+    </div>
+    <div class="g-item g-5">
+      <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80" alt="Member spotlight" />
+      <span class="caption">Member Spotlight</span>
+    </div>
+    <div class="g-item g-6">
+      <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=1200&q=80" alt="Group dinner" />
+      <span class="caption">London · Chapter Host</span>
+    </div>
+    <div class="g-item g-7">
+      <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1000&q=80" alt="Chapter launch" />
+      <span class="caption">NYC · Founding Members</span>
+    </div>
+  </div>
+</section>
+
+<!-- APP ACCESS -->
+<section class="app-access reveal">
+  <div class="app-wrap">
+    <div class="spacer"></div>
+    <div class="app-text">
+      <span class="eyebrow">07 / Private App Access</span>
+      <h2>Members Only. <span class="italic">By design.</span></h2>
+      <p>Once you're welcomed into the community, you'll receive access to the Power Ladies app — the private home for our village. RSVPs, introductions, chapter updates, Power Pods, and direct messages all live in one place.</p>
+      <div class="power-line">The power is on the app.</div>
+    </div>
+    <div class="app-visual">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="screen">
+          <div class="p-brand">POWER LADIES</div>
+          <div class="p-title">Tonight,<br />Downtown LA.</div>
+          <div class="p-card">
+            <span class="tag">Tonight · 5 PM</span>
+            <div class="p-h">How Can I Help You?</div>
+            <div style="opacity:0.8">32 members going · City Club</div>
+          </div>
+          <div class="p-row">
+            <div class="avatar"></div>
+            <div><strong style="font-family:'Archivo Black',sans-serif;">Sharon</strong> is looking for a wellness coach</div>
+          </div>
+          <div class="p-row">
+            <div class="avatar" style="background:var(--ink)"></div>
+            <div><strong style="font-family:'Archivo Black',sans-serif;">Meera</strong> introduced you to Kelly</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section id="faqs" class="faqs reveal">
+  <div class="section-head" style="max-width:900px; margin: 0 auto 48px;">
+    <div class="num">08 / FAQ</div>
+    <h2 class="title">The <span class="italic">quick answers.</span></h2>
+  </div>
+  <div class="faq-list">
+    <details class="faq" open>
+      <summary>Who is this for?<span class="icon">+</span></summary>
+      <div class="faq-body">Women of every industry, stage, and season — as long as you show up with <em>generosity</em> and respect. Founders and first-timers, creatives and career-changers, small business owners and CEOs are all at the table. What you do is secondary to who you are.</div>
+    </details>
+    <details class="faq">
+      <summary>How do I join?<span class="icon">+</span></summary>
+      <div class="faq-body">Most members are invited in by an existing Power Lady. If you don't know one yet, reach out through the contact form below or email <a href="mailto:info@thepowerladies.com">info@thepowerladies.com</a> — we'll connect you with your local chapter lead.</div>
+    </details>
+    <details class="faq">
+      <summary>Do I need to apply?<span class="icon">+</span></summary>
+      <div class="faq-body">There's no formal application. When you're referred, your chapter lead may do a quick <em>"good human" Zoom</em> — a ten-minute hello to make sure we're a mutual fit. That's it. If you do not have a referral, we have a waiting list for those who want to join, which will include a brief interview to ensure alignment with the community.</div>
+    </details>
+    <details class="faq">
+      <summary>Is there a membership fee?<span class="icon">+</span></summary>
+      <div class="faq-body">Los Angeles chapters are now paid membership, with a few tiers designed to fit different lifestyles. Reach out to <a href="mailto:info@thepowerladies.com">info@thepowerladies.com</a> and we'll walk you through the options that make the most sense for you.</div>
+    </details>
+    <details class="faq">
+      <summary>What happens after I reach out?<span class="icon">+</span></summary>
+      <div class="faq-body">You'll hear back from a chapter lead within a few days. We'll get to know each other, invite you to your first event, and welcome you into the private app once you're officially in the circle.</div>
+    </details>
+    <details class="faq">
+      <summary>Is this available in my city?<span class="icon">+</span></summary>
+      <div class="faq-body">
+        We have chapters opening soon or existing in:
+        <div class="faq-cities">
+          <span class="fc">Los Angeles — Westside</span>
+          <span class="fc">Los Angeles — The Valley</span>
+          <span class="fc">South Bay</span>
+          <span class="fc">Los Angeles — Downtown</span>
+          <span class="fc">Laguna Niguel</span>
+          <span class="fc">Pasadena</span>
+          <span class="fc">Malibu</span>
+          <span class="fc">San Diego</span>
+          <span class="fc">Sacramento</span>
+          <span class="fc">Phoenix / Scottsdale</span>
+          <span class="fc">Tucson</span>
+          <span class="fc">NYC — Lower East Side</span>
+          <span class="fc">Washington, DC</span>
+          <span class="fc">Toronto</span>
+          <span class="fc">Montreal</span>
+          <span class="fc">Lisbon</span>
+          <span class="fc">London</span>
+          <span class="fc">Zurich</span>
+          <span class="fc">Mexico City</span>
+          <span class="fc">Temecula</span>
+          <span class="fc">San Francisco</span>
+          <span class="fc">Seattle</span>
+          <span class="fc">Beverly Hills</span>
+          <span class="fc">Long Beach</span>
+          <span class="fc">Hollywood</span>
+          <span class="fc">Westlake Village</span>
+        </div>
+        Don't see your city? You might be the one to start it. <a href="#contact">Tell us below.</a>
+      </div>
+    </details>
+    <details class="faq">
+      <summary>Are men allowed?<span class="icon">+</span></summary>
+      <div class="faq-body">We love our male Power Allies — they're occasionally invited to specific events, and our brother community, <em>The Allies</em>, holds its own gatherings. Our monthly Power Ladies chapter events, however, are for the women in our community.</div>
+    </details>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact reveal">
+  <div class="section-head">
+    <div class="num">09 / Contact</div>
+    <h2 class="title">Let's <span class="italic">talk.</span></h2>
+  </div>
+  <div class="contact-grid">
+    <div class="spacer"></div>
+    <div class="contact-intro">
+      <p>Whether you want to join the community, start a chapter in your city, partner with us, or just say hi — <em>the door is open.</em></p>
+      <ul class="contact-reasons">
+        <li><span class="dot"></span>Join the Community</li>
+        <li><span class="dot"></span>Membership Inquiries</li>
+        <li><span class="dot"></span>Start a Chapter</li>
+        <li><span class="dot"></span>Speaking &amp; Partnerships</li>
+        <li><span class="dot"></span>Collaboration Inquiries</li>
+        <li><span class="dot"></span>Just Connecting</li>
+      </ul>
+    </div>
+    <div>
+      <form class="form" id="contactForm" novalidate>
+        <div class="field">
+          <label>First Name</label>
+          <input type="text" name="firstName" required />
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input type="text" name="lastName" required />
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" name="email" required />
+        </div>
+        <div class="field">
+          <label>City</label>
+          <input type="text" name="city" placeholder="Los Angeles, Montreal…" />
+        </div>
+        <div class="field full">
+          <label>I'm reaching out about</label>
+          <select name="reason" required>
+            <option value="">Select one…</option>
+            <option>Joining the community</option>
+            <option>Membership inquiry</option>
+            <option>Starting a chapter</option>
+            <option>Speaking or partnership</option>
+            <option>Collaboration inquiry</option>
+            <option>Just connecting</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label>Message</label>
+          <textarea name="message" placeholder="Tell us a little about you, who referred you (if anyone), and what you're hoping to find here…"></textarea>
+        </div>
+        <div class="form-submit full">
+          <p class="fine">We read every note. Expect a reply within a few days from a chapter lead.</p>
+          <button type="submit" class="btn yellow">Send It <span class="arrow"></span></button>
+        </div>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <h3>Thank you.</h3>
+        <p>We'll be in touch soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-wrap">
+    <div class="f-brand">Power<br />Ladies</div>
+    <div class="f-meta">
+      © 2026 Power Ladies · Built by women, for women<br />
+      Founding Partners: Rize Credit Union · Barely Canadian<br />
+      <a href="mailto:info@thepowerladies.com">info@thepowerladies.com</a> · Instagram · LinkedIn<br />
+      Women helping women. Everywhere.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Form simulate submit
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.style.display = 'none';
+    success.classList.add('show');
+    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  // Only allow one FAQ open at a time
+  const faqs = document.querySelectorAll('.faq');
+  faqs.forEach(faq => {
+    faq.addEventListener('toggle', () => {
+      if (faq.open) {
+        faqs.forEach(other => { if (other !== faq) other.open = false; });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -247,6 +247,75 @@
     color: var(--yellow);
   }
 
+  /* ---------- Announcement (reusable — for any upcoming event) ---------- */
+  .announcement {
+    background: var(--ink);
+    padding: 56px 32px;
+  }
+  .announcement-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .announcement-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 16px;
+  }
+  .announcement-eyebrow .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--yellow);
+    display: inline-block;
+  }
+  .announcement-title {
+    font-family: 'Archivo Black', sans-serif;
+    color: var(--cream);
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+  .announcement-meta {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--cream);
+    opacity: 0.85;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+  }
+  .announcement-meta-line {
+    margin-bottom: 4px;
+  }
+  .announcement-meta-line:last-child {
+    margin-bottom: 0;
+  }
+  .announcement-meta-line span {
+    margin: 0 8px;
+    opacity: 0.5;
+  }
+  .announcement-desc {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--cream);
+    opacity: 0.85;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0 auto 32px;
+  }
+  .announcement-cta {
+    display: inline-flex;
+  }
+
   /* ---------- Marquee ---------- */
   .marquee {
     background: var(--ink);
@@ -1296,6 +1365,7 @@
   @media (max-width: 900px) {
     section.frame { padding: 80px 20px; }
     .hero { padding: 100px 20px 40px; }
+    .announcement { padding: 40px 20px; }
     .hero-topline { font-size: 10px; flex-wrap: wrap; gap: 8px; }
     .hero-bottom { grid-template-columns: 1fr; gap: 24px; }
     .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 40px; }
@@ -1394,6 +1464,29 @@
       Rise together.
     </div>
     <a href="#contact" class="btn">Join the Community <span class="arrow"></span></a>
+  </div>
+</section>
+
+<!--
+  ANNOUNCEMENT — reusable for any upcoming event.
+  To update for a future event, only change the text/link inside
+  <div class="announcement-wrap"> below (title, the three meta lines —
+  date / times / location — description, and the ticket link).
+  No CSS or structure changes needed.
+-->
+<section class="announcement">
+  <div class="announcement-wrap">
+    <div class="announcement-eyebrow"><span class="dot"></span>Upcoming Event</div>
+    <h2 class="announcement-title">The Power Allies Network Launch Party</h2>
+    <div class="announcement-meta">
+      <div class="announcement-meta-line">Sat, Oct 17, 2026</div>
+      <div class="announcement-meta-line">4:00 PM VIP Hour <span>·</span> 5:00–8:00 PM Main Event</div>
+      <div class="announcement-meta-line">The City Club, Los Angeles</div>
+    </div>
+    <p class="announcement-desc">
+      Join us to celebrate the launch of The Allies Athlete Ambassador program. We'll celebrate our first round of college athletes (University of Arizona Football) with professional athletes, celebrities allies, and all your favorite Allies and Power Ladies.
+    </p>
+    <a class="btn yellow announcement-cta" href="https://www.tickettailor.com/events/thepowerladies/2368064" target="_blank" rel="noopener">Get Tickets <span class="arrow"></span></a>
   </div>
 </section>
 

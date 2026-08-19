@@ -18,6 +18,7 @@
     --muted: #6B655A;
     --line: #1A19171A;
     --line-cream: #F3EFE320;
+    --banner-offset: 0px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -53,9 +54,51 @@
   }
 
   /* ---------- Nav ---------- */
-  .nav {
+  /* ---------- Announcement Banner (reusable — dismissible, sits above nav) ---------- */
+  .announcement-banner {
     position: fixed;
     top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px 46px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    line-height: 1.4;
+  }
+  .announcement-banner a {
+    color: var(--yellow);
+    font-weight: 600;
+    text-decoration: underline;
+    white-space: nowrap;
+  }
+  .announcement-banner-close {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--cream);
+    opacity: 0.65;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 6px;
+  }
+  .announcement-banner-close:hover { opacity: 1; }
+
+  .nav {
+    position: fixed;
+    top: var(--banner-offset);
+    left: 0; right: 0;
     z-index: 100;
     display: flex;
     justify-content: space-between;
@@ -63,6 +106,7 @@
     padding: 22px 32px;
     mix-blend-mode: difference;
     color: var(--cream);
+    transition: top 0.2s ease;
   }
   .nav .brand {
     font-family: 'Archivo Black', sans-serif;
@@ -88,7 +132,7 @@
   /* ---------- Hero ---------- */
   .hero {
     min-height: 100vh;
-    padding: 120px 32px 60px;
+    padding: calc(120px + var(--banner-offset)) 32px 60px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -906,13 +950,7 @@
     text-transform: uppercase;
     font-weight: 600;
   }
-  .g-1 { grid-column: span 5; grid-row: span 2; aspect-ratio: 4/5; }
-  .g-2 { grid-column: span 4; aspect-ratio: 1; }
-  .g-3 { grid-column: span 3; aspect-ratio: 3/4; }
-  .g-4 { grid-column: span 4; aspect-ratio: 4/3; }
-  .g-5 { grid-column: span 3; aspect-ratio: 1; }
-  .g-6 { grid-column: span 7; aspect-ratio: 16/9; }
-  .g-7 { grid-column: span 5; aspect-ratio: 5/4; }
+  .g-tile { grid-column: span 4; aspect-ratio: 4/3; }
   .g-quote {
     background: var(--yellow);
     display: flex;
@@ -1364,7 +1402,7 @@
   /* ---------- Responsive ---------- */
   @media (max-width: 900px) {
     section.frame { padding: 80px 20px; }
-    .hero { padding: 100px 20px 40px; }
+    .hero { padding: calc(100px + var(--banner-offset)) 20px 40px; }
     .announcement { padding: 40px 20px; }
     .hero-topline { font-size: 10px; flex-wrap: wrap; gap: 8px; }
     .hero-bottom { grid-template-columns: 1fr; gap: 24px; }
@@ -1412,7 +1450,7 @@
     .footer-wrap { grid-template-columns: 1fr; }
     footer .f-meta { text-align: left; }
     .gallery-grid { grid-template-columns: repeat(6, 1fr); }
-    .g-1, .g-2, .g-3, .g-4, .g-5, .g-6, .g-7 { grid-column: span 6; aspect-ratio: 4/3; }
+    .g-tile { grid-column: span 6; aspect-ratio: 4/3; }
     .nav { padding: 16px 20px; }
     .nav ul { gap: 18px; }
     .marquee-track span { font-size: 28px; padding: 0 24px; }
@@ -1423,6 +1461,24 @@
 </style>
 </head>
 <body>
+
+<!--
+  ANNOUNCEMENT BANNER — reusable for any upcoming event, sits above the nav.
+  To update for a future event:
+    1. Change the text and href inside <span class="announcement-banner-text"> below.
+    2. Change data-banner-id to a new unique value (e.g. the new event's date).
+       This is what makes the banner reappear for past visitors who dismissed
+       the previous one — each unique ID gets its own "dismissed" memory.
+  No CSS or script changes needed.
+-->
+<div class="announcement-banner" id="announcementBanner" data-banner-id="launch-party-2026-10-17">
+  <span class="announcement-banner-text">
+    <span aria-hidden="true">&#9679;</span>
+    The Power Allies Network Launch Party &mdash; Sat, Oct 17
+    <a href="https://www.tickettailor.com/events/thepowerladies/2368064" target="_blank" rel="noopener">Get tickets</a>
+  </span>
+  <button class="announcement-banner-close" id="announcementBannerClose" aria-label="Dismiss announcement">&times;</button>
+</div>
 
 <!-- Nav -->
 <nav class="nav">
@@ -1435,6 +1491,7 @@
     <li><a href="#contact">Join</a></li>
   </ul>
 </nav>
+
 
 <!-- HERO -->
 <section class="hero">
@@ -1718,35 +1775,31 @@
     <h2 class="title">What it <span class="italic">feels</span> like.</h2>
   </div>
   <div class="gallery-grid">
-    <div class="g-item g-1">
-      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" alt="Women gathered at an event" />
-      <span class="caption">Downtown LA · City Club</span>
+    <div class="g-item g-tile">
+      <img src="assets/gallery-refer-your-friends.jpg" alt="Members gathered together" />
+      <span class="caption">Refer Your Friends</span>
     </div>
-    <div class="g-item g-2">
-      <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?w=800&q=80" alt="Women in conversation" />
-      <span class="caption">Active Helping</span>
+    <div class="g-item g-tile">
+      <img src="assets/gallery-power-ladies.jpg" alt="Power Ladies members" />
+      <span class="caption">Power Ladies</span>
     </div>
-    <div class="g-item g-3 g-quote">
+    <div class="g-item g-tile">
+      <img src="assets/gallery-active-help.jpg" alt="Members actively helping one another" />
+      <span class="caption">Active Help</span>
+    </div>
+    <div class="g-item g-tile">
+      <img src="assets/gallery-city-club.jpg" alt="Member at a City Club event" />
+      <span class="caption">City Club</span>
+    </div>
+    <div class="g-item g-tile">
+      <img src="assets/gallery-westside.jpg" alt="Members mingling at a Westside gathering" />
+      <span class="caption">Westside</span>
+    </div>
+    <div class="g-item g-tile g-quote">
       <div class="q-text">
         "How can I help you?"
         <strong>— Our favorite question</strong>
       </div>
-    </div>
-    <div class="g-item g-4">
-      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80" alt="Founders gathering" />
-      <span class="caption">Montreal · Chapter Night</span>
-    </div>
-    <div class="g-item g-5">
-      <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80" alt="Member spotlight" />
-      <span class="caption">Member Spotlight</span>
-    </div>
-    <div class="g-item g-6">
-      <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=1200&q=80" alt="Group dinner" />
-      <span class="caption">London · Chapter Host</span>
-    </div>
-    <div class="g-item g-7">
-      <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1000&q=80" alt="Chapter launch" />
-      <span class="caption">NYC · Founding Members</span>
     </div>
   </div>
 </section>
@@ -1939,6 +1992,35 @@
 </footer>
 
 <script>
+  // Announcement banner — show/measure/dismiss
+  (function() {
+    const banner = document.getElementById('announcementBanner');
+    const closeBtn = document.getElementById('announcementBannerClose');
+    if (!banner || !closeBtn) return;
+
+    const bannerId = banner.getAttribute('data-banner-id');
+    const storageKey = 'plBannerDismissed:' + bannerId;
+
+    if (sessionStorage.getItem(storageKey)) {
+      banner.style.display = 'none';
+      return;
+    }
+
+    function applyOffset() {
+      const height = banner.offsetHeight;
+      document.documentElement.style.setProperty('--banner-offset', height + 'px');
+    }
+    applyOffset();
+    window.addEventListener('resize', applyOffset);
+
+    closeBtn.addEventListener('click', () => {
+      banner.style.display = 'none';
+      document.documentElement.style.setProperty('--banner-offset', '0px');
+      window.removeEventListener('resize', applyOffset);
+      sessionStorage.setItem(storageKey, '1');
+    });
+  })();
+
   // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {

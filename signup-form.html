@@ -6,15 +6,15 @@
 <title>Join Power Ladies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #FAF7EF;
+    --cream: #F3EFE3;
     --card: #FFFFFF;
-    --ink: #37342E;
-    --ink-soft: #6B675F;
-    --yellow: #FFDE21;
-    --yellow-deep: #B58900;
+    --ink: #1A1917;
+    --ink-soft: #6B655A;
+    --yellow: #EFE95C;
+    --yellow-deep: #D9D240;
     --border: #E7E2D4;
     --error: #B3261E;
   }
@@ -23,27 +23,50 @@
     margin: 0;
     background: var(--cream);
     color: var(--ink);
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Instrument Sans', -apple-system, sans-serif;
     padding: 40px 16px 80px;
   }
   .wrap { max-width: 560px; margin: 0 auto; }
+  .header-block { margin-bottom: 36px; }
   .eyebrow {
-    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .22em;
+    text-transform: uppercase;
     color: var(--ink-soft);
-    margin: 0 0 4px;
+    margin: 0 0 14px;
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--yellow-deep);
   }
   h1 {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+    font-size: 40px;
+    margin: 0 0 14px;
+  }
+  h1 .italic {
     font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 34px;
-    line-height: 1.15;
-    margin: 0 0 12px;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -0.015em;
   }
   .intro {
     font-size: 15px;
     color: var(--ink-soft);
     line-height: 1.6;
-    margin: 0 0 32px;
+    margin: 0;
     max-width: 46ch;
   }
   form {
@@ -153,17 +176,27 @@
     padding: 20px 4px 4px;
   }
   .success-panel h2 {
-    font-family: 'Fraunces', serif;
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
     font-size: 24px;
     margin: 0 0 8px;
+  }
+  .success-panel h2 .italic {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <p class="eyebrow">Power Ladies</p>
-  <h1>Join the community</h1>
-  <p class="intro">Tell us a bit about yourself and we'll get you set up — including adding you to our mailing list so you never miss a chapter meeting or update.</p>
+  <div class="header-block">
+    <p class="eyebrow">Power Ladies</p>
+    <h1>Join the <span class="italic">community</span></h1>
+    <p class="intro">Tell us a bit about yourself and we'll get you set up — including adding you to our mailing list so you never miss a chapter meeting or update.</p>
+  </div>
 
   <form id="signup-form" novalidate>
     <div class="field" data-field="fullName">
@@ -255,7 +288,7 @@
   </form>
 
   <div class="success-panel" id="success-panel" style="display:none;">
-    <h2>Welcome to Power Ladies 💛</h2>
+    <h2>Welcome to <span class="italic">Power Ladies</span> 💛</h2>
     <p>You're all set — keep an eye on your inbox for next steps.</p>
   </div>
 </div>
